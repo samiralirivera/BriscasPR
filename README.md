@@ -5,8 +5,8 @@ Juego de cartas Briscas con reglas puertorriqueñas implementado en Python con i
 ## Características
 - Lógica completa de Briscas (mazo, reparto, rondas, determinación de ganador).
 - Interfaz gráfica con imágenes de cartas y marcador en tiempo real.
-- Intercambio del **2 de triunfo** en la primera ronda.
-- Intercambio del **7 de triunfo** a partir de la segunda ronda.
+- Intercambio del **2 de vida** en la primera ronda.
+- Intercambio del **7 de vida** a partir de la segunda ronda.
 - Botón **Reset** para reiniciar la partida en cualquier momento.
 
 ## Requisitos
@@ -39,8 +39,8 @@ python briscas_gui.py
 Briscas/                # Carpeta raíz
 ├── briscas.py           # Lógica del juego y reglas
 ├── briscas_gui.py       # Interfaz Tkinter y manejo de eventos
-├── slice_cards.py       # Herramienta para generar imágenes de cartas
 ├── images/              # Carpeta de imágenes (placeholders si faltan)
+├── images/recortar_briscas.py # Herramienta para generar imágenes de cartas
 ├── requirements.txt     # Dependencias del proyecto
 └── README.md            # Documentación del proyecto
 ```
