@@ -136,10 +136,22 @@ if __name__ == "__main__":
     
     while all(jugador.mano for jugador in jugadores):
         ganador = juego.jugar_ronda()
-        print(f"\nGanador de la ronda: {ganador.nombre}")
-        print(f"Cartas jugadas: {[c for _, c in juego.mano_actual]}")
-        print(f"Puntos acumulados: {dict(juego.puntos)}")
+        print("\n--- Nueva ronda ---")
+        print(f"Ganador de la ronda: {ganador.nombre}")
+        # Mostrar cartas jugadas por cada jugador
+        print("Cartas jugadas:")
+        for j, c in juego.mano_actual:
+            print(f"  {j.nombre}: {c}")
+        # Mostrar puntuaciones actuales
+        print("Puntos acumulados:")
+        for j, pts in juego.puntos.items():
+            print(f"  {j.nombre}: {pts}")
     
-    print("\n--- Resultado Final ---")
-    for jugador, puntos in juego.puntos.items():
-        print(f"{jugador.nombre}: {puntos}puntos")
+    print("\n=== Resultado Final ===")
+    # Ordenar resultados de mayor a menor
+    resultados = sorted(juego.puntos.items(), key=lambda x: x[1], reverse=True)
+    ganador_final, puntos_final = resultados[0]
+    print(f"\n¡Ganador: {ganador_final.nombre} con {puntos_final} puntos!\n")
+    print("Posiciones:")
+    for pos, (jugador, pts) in enumerate(resultados, start=1):
+        print(f"  {pos}. {jugador.nombre}: {pts} puntos")
